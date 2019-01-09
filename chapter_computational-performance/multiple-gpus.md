@@ -1,6 +1,6 @@
 # Multi-GPU Computation
 
-In this section, we will show how to use multiple GPU for computation. For example, we can train the same model using multiple GPUs. As you might expect, running the programs in this section requires at least two GPUs. In fact, installing multiple GPUs on a single machine is common because there are usually multiple PCIe slots on the motherboard. If the Nvidia driver is properly installed, we can use the `nvidia-smi` command to view all GPUs on the current computer.
+In this section, we will show how to use multiple GPUs for computation. For example, we can train the same model using multiple GPUs. As you might expect, running the programs in this section requires at least two GPUs. In fact, installing multiple GPUs on a single machine is common because there are usually multiple PCIe slots on the motherboard. If the Nvidia driver is properly installed, we can use the `nvidia-smi` command to view all GPUs on the current computer.
 
 ```{.python .input  n=1}
 !nvidia-smi
@@ -181,7 +181,7 @@ We will start by training with a single GPU. Assume the batch size is 256 and th
 train(num_gpus=1, batch_size=256, lr=0.2)
 ```
 
-By keeping the batch size and learning rate unchanged and changing the number of GPUs to 2, we can see that the improvement in test accuracy is roughly the same as in the results from the previous experiment. Because of the extra communication overhead, we did not observe a significant reduction in the training time.
+By keeping the batch size and learning rate unchanged and changing the number of GPUs to 2, we can see that the improvement in test accuracy is roughly the same as in the results from the previous experiment. Because of the extra communication overhead, we did not observe a significant reduction in training time.
 
 ```{.python .input  n=13}
 train(num_gpus=2, batch_size=256, lr=0.2)
